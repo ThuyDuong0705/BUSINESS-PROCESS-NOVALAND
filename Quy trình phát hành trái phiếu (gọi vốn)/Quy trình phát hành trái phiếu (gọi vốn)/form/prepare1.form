@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Content of Information Disclosure",
+      "type": "textfield",
+      "id": "Field_0g7j6dm",
+      "key": "field_0tfj5t7",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Contract Signed Between The Enterprise And Related Parties",
+      "type": "textfield",
+      "id": "Field_0tojxbr",
+      "key": "field_1u9bg7f",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Audited Previous Year's Financial Statements",
+      "type": "textfield",
+      "id": "Field_103bt19",
+      "key": "field_0irwpfy",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Bond Purchase Contract",
+      "type": "textfield",
+      "id": "Field_1md6bvn",
+      "key": "field_0pvo5h3",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_1hsr2xe"
+}

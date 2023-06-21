@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0qo30h7" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:collaboration id="research-process">
+    <bpmn:participant id="Participant_1kgcliw" name="Company" processRef="researchProcess" />
+  </bpmn:collaboration>
+  <bpmn:process id="researchProcess" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_1nlu3pl">
+      <bpmn:lane id="Lane_0b186qu" name="Projects Development">
+        <bpmn:flowNodeRef>define-research-goals</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>process-started</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>process-ended</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>save-report</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>report-plan</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>find-location</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>plan-market-promotion</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1qb78zn" name="Director">
+        <bpmn:flowNodeRef>Gateway_0pwh9ce</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>approve-survey</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_1wcvxni</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>approve-plan</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:exclusiveGateway id="Gateway_0pwh9ce" name="Is the survey &#34;OK&#34; or &#34;not OK&#34; ?">
+      <bpmn:incoming>Flow_18smjmp</bpmn:incoming>
+      <bpmn:outgoing>Flow_17aqq5g</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1v3z2ve</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="approve-survey" name="Approve survey" camunda:formKey="camunda-forms:deployment:approveSurveyForm.form" camunda:assignee="thong" camunda:candidateUsers="thibg">
+      <bpmn:incoming>Flow_0ni5ypg</bpmn:incoming>
+      <bpmn:outgoing>Flow_18smjmp</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="define-research-goals" name="Define research goals" camunda:formKey="camunda-forms:deployment:researchForm.form" camunda:assignee="huy" camunda:candidateUsers="huy">
+      <bpmn:incoming>Flow_0mz98es</bpmn:incoming>
+      <bpmn:incoming>Flow_1v3z2ve</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ni5ypg</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:startEvent id="process-started" name="New project required">
+      <bpmn:outgoing>Flow_0mz98es</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1v3z2ve" name="Not OK" sourceRef="Gateway_0pwh9ce" targetRef="define-research-goals">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{isSurveyOK == 0}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0mz98es" sourceRef="process-started" targetRef="define-research-goals" />
+    <bpmn:sequenceFlow id="Flow_0ni5ypg" sourceRef="define-research-goals" targetRef="approve-survey" />
+    <bpmn:sequenceFlow id="Flow_0mo5p1i" sourceRef="save-report" targetRef="process-ended" />
+    <bpmn:sequenceFlow id="Flow_0sshy3d" sourceRef="report-plan" targetRef="save-report" />
+    <bpmn:sequenceFlow id="Flow_18smjmp" sourceRef="approve-survey" targetRef="Gateway_0pwh9ce" />
+    <bpmn:sequenceFlow id="Flow_0qsov7x" sourceRef="plan-market-promotion" targetRef="approve-plan" />
+    <bpmn:sequenceFlow id="Flow_0cyfk1g" name="OK" sourceRef="Gateway_1wcvxni" targetRef="report-plan">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{isPlanOK == 1}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_17aqq5g" name="OK" sourceRef="Gateway_0pwh9ce" targetRef="find-location">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{isSurveyOK == 1}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_127itg9" name="Not OK" sourceRef="Gateway_1wcvxni" targetRef="find-location">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{isPlanOK == 0}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_11i9m26" sourceRef="approve-plan" targetRef="Gateway_1wcvxni" />
+    <bpmn:sequenceFlow id="Flow_0qpekrc" sourceRef="find-location" targetRef="plan-market-promotion" />
+    <bpmn:endEvent id="process-ended" name="Report saved">
+      <bpmn:incoming>Flow_0mo5p1i</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:dataStoreReference id="DataStoreRef" name="DB" />
+    <bpmn:serviceTask id="save-report" name="Save report" camunda:type="external" camunda:topic="SaveData">
+      <bpmn:incoming>Flow_0sshy3d</bpmn:incoming>
+      <bpmn:outgoing>Flow_0mo5p1i</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_08srb2c">
+        <bpmn:targetRef>DataStoreRef</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:manualTask id="report-plan" name="Report plan">
+      <bpmn:incoming>Flow_0cyfk1g</bpmn:incoming>
+      <bpmn:outgoing>Flow_0sshy3d</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:exclusiveGateway id="Gateway_1wcvxni" name="Is the plan &#34;OK&#34; or &#34;not OK&#34; ?">
+      <bpmn:incoming>Flow_11i9m26</bpmn:incoming>
+      <bpmn:outgoing>Flow_0cyfk1g</bpmn:outgoing>
+      <bpmn:outgoing>Flow_127itg9</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:manualTask id="find-location" name="Find location">
+      <bpmn:incoming>Flow_17aqq5g</bpmn:incoming>
+      <bpmn:incoming>Flow_127itg9</bpmn:incoming>
+      <bpmn:outgoing>Flow_0qpekrc</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="plan-market-promotion" name="Plan market promotion" camunda:formKey="camunda-forms:deployment:planForm.form">
+      <bpmn:incoming>Flow_0qpekrc</bpmn:incoming>
+      <bpmn:outgoing>Flow_0qsov7x</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="approve-plan" name="Approve plan" camunda:formKey="camunda-forms:deployment:approvePlanForm.form" camunda:assignee="thog" camunda:candidateUsers="thong">
+      <bpmn:incoming>Flow_0qsov7x</bpmn:incoming>
+      <bpmn:outgoing>Flow_11i9m26</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="research-process">
+      <bpmndi:BPMNShape id="Participant_1kgcliw_di" bpmnElement="Participant_1kgcliw" isHorizontal="true">
+        <dc:Bounds x="120" y="100" width="1400" height="420" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1qb78zn_di" bpmnElement="Lane_1qb78zn" isHorizontal="true">
+        <dc:Bounds x="150" y="100" width="1370" height="150" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0b186qu_di" bpmnElement="Lane_0b186qu" isHorizontal="true">
+        <dc:Bounds x="150" y="250" width="1370" height="270" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0qpekrc_di" bpmnElement="Flow_0qpekrc">
+        <di:waypoint x="780" y="310" />
+        <di:waypoint x="980" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11i9m26_di" bpmnElement="Flow_11i9m26">
+        <di:waypoint x="1080" y="190" />
+        <di:waypoint x="1185" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_127itg9_di" bpmnElement="Flow_127itg9">
+        <di:waypoint x="1210" y="165" />
+        <di:waypoint x="1210" y="120" />
+        <di:waypoint x="730" y="120" />
+        <di:waypoint x="730" y="270" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1221" y="136" width="37" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17aqq5g_di" bpmnElement="Flow_17aqq5g">
+        <di:waypoint x="580" y="215" />
+        <di:waypoint x="580" y="310" />
+        <di:waypoint x="680" y="310" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="601" y="290" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cyfk1g_di" bpmnElement="Flow_0cyfk1g">
+        <di:waypoint x="1210" y="215" />
+        <di:waypoint x="1210" y="270" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1181" y="382" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qsov7x_di" bpmnElement="Flow_0qsov7x">
+        <di:waypoint x="1030" y="270" />
+        <di:waypoint x="1030" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18smjmp_di" bpmnElement="Flow_18smjmp">
+        <di:waypoint x="510" y="190" />
+        <di:waypoint x="555" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sshy3d_di" bpmnElement="Flow_0sshy3d">
+        <di:waypoint x="1260" y="310" />
+        <di:waypoint x="1300" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0mo5p1i_di" bpmnElement="Flow_0mo5p1i">
+        <di:waypoint x="1400" y="310" />
+        <di:waypoint x="1442" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ni5ypg_di" bpmnElement="Flow_0ni5ypg">
+        <di:waypoint x="390" y="310" />
+        <di:waypoint x="460" y="310" />
+        <di:waypoint x="460" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0mz98es_di" bpmnElement="Flow_0mz98es">
+        <di:waypoint x="238" y="310" />
+        <di:waypoint x="290" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1v3z2ve_di" bpmnElement="Flow_1v3z2ve">
+        <di:waypoint x="580" y="165" />
+        <di:waypoint x="580" y="130" />
+        <di:waypoint x="340" y="130" />
+        <di:waypoint x="340" y="270" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="591" y="139" width="37" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Gateway_0pwh9ce_di" bpmnElement="Gateway_0pwh9ce" isMarkerVisible="true">
+        <dc:Bounds x="555" y="165" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="585" y="216" width="90" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1q35tx4_di" bpmnElement="approve-survey">
+        <dc:Bounds x="410" y="150" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_07i4o2g_di" bpmnElement="define-research-goals">
+        <dc:Bounds x="290" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="process-started">
+        <dc:Bounds x="202" y="292" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="191" y="335" width="60" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1oh9zyk_di" bpmnElement="process-ended">
+        <dc:Bounds x="1442" y="292" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1427" y="335" width="66" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_0p7okra_di" bpmnElement="DataStoreRef">
+        <dc:Bounds x="1435" y="355" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1492" y="383" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1azfa6d_di" bpmnElement="save-report">
+        <dc:Bounds x="1300" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1d26or3_di" bpmnElement="report-plan">
+        <dc:Bounds x="1160" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1wcvxni_di" bpmnElement="Gateway_1wcvxni" isMarkerVisible="true">
+        <dc:Bounds x="1185" y="165" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1245" y="177" width="78" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1r40qqj_di" bpmnElement="find-location">
+        <dc:Bounds x="680" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0hdrx8g_di" bpmnElement="plan-market-promotion">
+        <dc:Bounds x="980" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1yy02ry_di" bpmnElement="approve-plan">
+        <dc:Bounds x="980" y="150" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_08srb2c_di" bpmnElement="DataOutputAssociation_08srb2c">
+        <di:waypoint x="1398" y="345" />
+        <di:waypoint x="1435" y="372" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

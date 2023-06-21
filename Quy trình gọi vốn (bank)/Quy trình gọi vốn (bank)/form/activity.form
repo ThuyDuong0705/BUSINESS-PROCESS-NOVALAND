@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Check Competitive Position and Prospects of the Business",
+      "type": "checkbox",
+      "id": "Field_0fz977z",
+      "key": "field_1ob4xjq"
+    },
+    {
+      "label": "Market survey",
+      "type": "textfield",
+      "id": "Field_0rzx465",
+      "key": "field_0c6nz21",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_0fp8m64"
+}

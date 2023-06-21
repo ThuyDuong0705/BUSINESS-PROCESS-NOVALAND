@@ -1,0 +1,103 @@
+{
+  "components": [
+    {
+      "label": "Họ và tên của khách hàng ",
+      "type": "textfield",
+      "id": "Field_1b5qg74",
+      "key": "name",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Số điện thoại khách hàng",
+      "type": "textfield",
+      "id": "Field_15zw3by",
+      "key": "field_1wtylef",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Nghề nghiệp",
+      "type": "textfield",
+      "id": "Field_1l24xvk",
+      "key": "field_0ic46cp",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "CMND",
+      "type": "textfield",
+      "id": "Field_0h0o9z3",
+      "key": "field_0dr2knp",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Địa chỉ",
+      "type": "textfield",
+      "id": "Field_1ic52xm",
+      "key": "field_18ua1ok",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Thu nhập",
+      "type": "textfield",
+      "id": "Field_1cid5m6",
+      "key": "field_09zgap8",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Nam",
+          "value": "male"
+        },
+        {
+          "label": "Nữ",
+          "value": "female"
+        }
+      ],
+      "label": "Giới tính",
+      "type": "radio",
+      "id": "Field_0iksqk8",
+      "key": "gender",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "value": "YES",
+          "label": "CÓ"
+        },
+        {
+          "label": "KHÔNG",
+          "value": "NO"
+        }
+      ],
+      "label": "Khách hàng có nhu cầu được tư vấn bởi nhân viên Novaland không?",
+      "type": "radio",
+      "id": "Field_18vwr4z",
+      "key": "field_0shs6a4",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "schemaVersion": 4,
+  "type": "default",
+  "id": "Form_16z2q7m",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.0.0"
+  }
+}

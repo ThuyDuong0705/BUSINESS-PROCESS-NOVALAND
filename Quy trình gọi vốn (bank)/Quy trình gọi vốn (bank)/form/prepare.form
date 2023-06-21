@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Information Company Overview",
+      "type": "textfield",
+      "id": "Field_1qd01yb",
+      "key": "field_0wauk5l",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Name of the project",
+      "type": "textfield",
+      "id": "Field_1r0he7d",
+      "key": "field_01k9ezk",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Contract MOU",
+      "type": "textfield",
+      "id": "Field_0ej5vch",
+      "key": "field_1pxs6et",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Investment Contract",
+      "type": "textfield",
+      "id": "Field_0wyee6y",
+      "key": "field_08jpixb",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Financial Plan",
+      "type": "textfield",
+      "id": "Field_12f5n9t",
+      "key": "field_1cpcx5t",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Development Plan",
+      "type": "textfield",
+      "id": "Field_0oy8grx",
+      "key": "field_0oo7m32",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Capital Use Plan",
+      "type": "textfield",
+      "id": "Field_1c7pi72",
+      "key": "field_115polj",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_1u7vnst"
+}

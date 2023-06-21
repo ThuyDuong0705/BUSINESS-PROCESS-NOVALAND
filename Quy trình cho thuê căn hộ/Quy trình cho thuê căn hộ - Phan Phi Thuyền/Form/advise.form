@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "What is the customer's name?",
+      "type": "textfield",
+      "id": "Field_08c6wmc",
+      "key": "name",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "How old is the customer?",
+      "type": "textfield",
+      "id": "Field_10uwf9z",
+      "key": "age",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Gender",
+      "type": "textfield",
+      "id": "Field_1kono3w",
+      "key": "field_1rfoqzh",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "The average monthly income of customer",
+      "type": "number",
+      "id": "Field_1l4re35",
+      "key": "income",
+      "validate": {
+        "required": true,
+        "min": 7000000,
+        "max": 20000000
+      }
+    },
+    {
+      "label": "How many people in customer's family",
+      "type": "number",
+      "id": "Field_0b0lj7b",
+      "key": "family",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "What is the customer's need?",
+      "type": "textfield",
+      "id": "Field_0ledyjs",
+      "key": "need"
+    }
+  ],
+  "type": "default",
+  "id": "Form_1o6w26f"
+}

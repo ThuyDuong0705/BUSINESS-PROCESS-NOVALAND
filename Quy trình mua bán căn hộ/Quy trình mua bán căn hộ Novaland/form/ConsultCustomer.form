@@ -1,0 +1,66 @@
+{
+  "components": [
+    {
+      "label": "Tên căn hộ",
+      "type": "textfield",
+      "id": "Field_19mhwf2",
+      "key": "field_01yntll",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Mã căn hộ",
+      "type": "textfield",
+      "id": "Field_0uax6ya",
+      "key": "field_11wr7u3",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Giá căn hộ",
+      "type": "textfield",
+      "id": "Field_08uuta9",
+      "key": "field_088fach",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Địa điểm",
+      "type": "textfield",
+      "id": "Field_030n6wp",
+      "key": "field_0y2n4h6",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "value": "yes",
+          "label": "Có"
+        },
+        {
+          "label": "Không",
+          "value": "no"
+        }
+      ],
+      "label": "Khách hàng có đồng ý mua không ?",
+      "type": "radio",
+      "id": "Field_0py5mnr",
+      "key": "ConsultCustomer",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "schemaVersion": 4,
+  "type": "default",
+  "id": "Form_0fkn0ze",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.0.0"
+  }
+}

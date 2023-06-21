@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Name of Customer",
+      "type": "textfield",
+      "id": "Field_1j4f0ka",
+      "key": "field_13dshvh",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Number of Bonds Purchased",
+      "type": "textfield",
+      "id": "Field_0xxkbcx",
+      "key": "field_0zc9bwi",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Interest Payment Date",
+      "type": "textfield",
+      "id": "Field_1f0r0yd",
+      "key": "field_0xdx1v5",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Validity Period",
+      "type": "textfield",
+      "id": "Field_1jv2an0",
+      "key": "field_0mb5j84",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_1gqnoi0"
+}

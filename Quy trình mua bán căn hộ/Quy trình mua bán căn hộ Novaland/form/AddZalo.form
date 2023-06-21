@@ -1,0 +1,66 @@
+{
+  "components": [
+    {
+      "label": "Tên zalo khách hàng",
+      "type": "textfield",
+      "id": "Field_1bsv20t",
+      "key": "field_0x5olmg",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Số điện thoại: ",
+      "type": "textfield",
+      "id": "Field_1fyr9oz",
+      "key": "field_1wtylef",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Những điểm nổi bật của dự án",
+      "type": "textfield",
+      "id": "Field_1wvv18u",
+      "key": "field_0zz5blb",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Những vấn đề khách hàng lo ngại ?",
+      "type": "textfield",
+      "id": "Field_08j9cd6",
+      "key": "field_0ordqol",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Khách hàng có đồng ý mua không ?",
+      "type": "radio",
+      "id": "Field_0skfo2v",
+      "key": "AddZalo",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "schemaVersion": 4,
+  "type": "default",
+  "id": "Form_153rs2j",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.0.0"
+  }
+}

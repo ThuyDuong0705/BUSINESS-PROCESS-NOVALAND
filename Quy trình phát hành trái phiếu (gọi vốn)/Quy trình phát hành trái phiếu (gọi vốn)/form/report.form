@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Report File",
+      "type": "textfield",
+      "id": "Field_10uep42",
+      "key": "field_0b2dkp8",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_1sstnlv"
+}

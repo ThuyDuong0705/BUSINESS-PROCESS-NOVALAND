@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Tên khách hàng:",
+      "type": "textfield",
+      "id": "Field_1nzeeih",
+      "key": "name",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Địa chỉ",
+      "type": "textfield",
+      "id": "Field_0mow3ut",
+      "key": "field_18ua1ok",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Nghề nghiệp",
+      "type": "textfield",
+      "id": "Field_1xi16jn",
+      "key": "field_0ic46cp",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Thuế thu nhập cá nhân",
+      "type": "textfield",
+      "id": "Field_008nb49",
+      "key": "field_1kx6zx6",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Hộ khẩu",
+      "type": "textfield",
+      "id": "Field_039ssjs",
+      "key": "field_1b44uij",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_0siqql4"
+}

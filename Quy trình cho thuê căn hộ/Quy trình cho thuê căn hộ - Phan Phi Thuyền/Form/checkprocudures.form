@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "values": [
+        {
+          "label": "OK",
+          "value": "ok"
+        },
+        {
+          "label": "Not Ok",
+          "value": "notok"
+        }
+      ],
+      "label": "Has the customer completed procedures",
+      "type": "radio",
+      "id": "Field_183kuit",
+      "key": "complete",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_1w84t6p"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "values": [
+        {
+          "value": "yes",
+          "label": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Khách hàng đã trả tiền đặt cọc chưa ?",
+      "type": "radio",
+      "id": "Field_06jpdcg",
+      "key": "checkdeposit",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_14aq5l2"
+}

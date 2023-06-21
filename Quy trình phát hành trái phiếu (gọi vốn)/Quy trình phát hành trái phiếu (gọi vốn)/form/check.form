@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Check Content of Information Disclosure",
+      "type": "checkbox",
+      "id": "Field_1l8k5tz",
+      "key": "field_01x76uc"
+    },
+    {
+      "label": "Check Contract Signed Between The Enterprise And Related Parties",
+      "type": "checkbox",
+      "id": "Field_0qdchta",
+      "key": "field_0q8v671"
+    },
+    {
+      "label": "Check Audited Previous Year's Financial Statements",
+      "type": "checkbox",
+      "id": "Field_1rrvb4d",
+      "key": "field_0iigov8"
+    },
+    {
+      "label": "Check Bond Purchase Contract",
+      "type": "checkbox",
+      "id": "Field_1g0j187",
+      "key": "field_1cxakco"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0brzfa4"
+}

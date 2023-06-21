@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Check Sales Assessment",
+      "type": "checkbox",
+      "id": "Field_0wgf9eg",
+      "key": "field_1x31vaq"
+    },
+    {
+      "label": "Check Cost",
+      "type": "checkbox",
+      "id": "Field_1dpf4fl",
+      "key": "field_1d57yhp"
+    },
+    {
+      "label": "Check Income and Assets",
+      "type": "checkbox",
+      "id": "Field_00r55b2",
+      "key": "field_0utato8"
+    },
+    {
+      "label": "Check Debt",
+      "type": "checkbox",
+      "id": "Field_12eb2pl",
+      "key": "field_1dfy2n5"
+    },
+    {
+      "label": "Check Owner's Contributed Capital",
+      "type": "checkbox",
+      "id": "Field_0qh44vl",
+      "key": "field_0tpw1el"
+    },
+    {
+      "label": "Check Cash Flow",
+      "type": "checkbox",
+      "id": "Field_0o94u6k",
+      "key": "field_0m95ky2"
+    },
+    {
+      "label": "Check Loans",
+      "type": "checkbox",
+      "id": "Field_068h7xv",
+      "key": "field_0dtoacl"
+    },
+    {
+      "label": "Check  Internal Control System of the Enterprise.",
+      "type": "checkbox",
+      "id": "Field_1cf63p6",
+      "key": "field_0m7lq6d"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0649tw1"
+}

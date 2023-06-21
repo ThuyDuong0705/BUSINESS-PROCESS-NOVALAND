@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Name of apartment ?",
+      "type": "textfield",
+      "id": "Field_196qvlu",
+      "key": "Name",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Where is the apartment?",
+      "type": "textfield",
+      "id": "Field_1ppy33m",
+      "key": "Where",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_0zb4vb6"
+}

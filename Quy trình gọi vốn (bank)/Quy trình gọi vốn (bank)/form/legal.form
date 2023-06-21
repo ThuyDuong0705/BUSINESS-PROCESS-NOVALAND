@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Check Ownership of Corporate Structure",
+      "type": "checkbox",
+      "id": "Field_1v4lsbv",
+      "key": "field_1ujlii9"
+    },
+    {
+      "label": "Check Business Assets",
+      "type": "checkbox",
+      "id": "Field_0bqkpfe",
+      "key": "field_1pj64lu"
+    },
+    {
+      "label": "Check Intellectual Property",
+      "type": "checkbox",
+      "id": "Field_081hwbc",
+      "key": "field_0bq15hp"
+    },
+    {
+      "label": "Check Tax",
+      "type": "checkbox",
+      "id": "Field_155i3rb",
+      "key": "field_10hoawg"
+    },
+    {
+      "label": "Check Business License And Conditions",
+      "type": "checkbox",
+      "id": "Field_1lbfwis",
+      "key": "field_03bccll"
+    },
+    {
+      "label": "Check Disputes and Complaints",
+      "type": "checkbox",
+      "id": "Field_0sjr8we",
+      "key": "field_0ya2yej"
+    },
+    {
+      "label": "Chec  Contracts and Other transactions",
+      "type": "checkbox",
+      "id": "Field_091tg19",
+      "key": "field_0ys2o5n"
+    }
+  ],
+  "type": "default",
+  "id": "Form_1rmfoql"
+}

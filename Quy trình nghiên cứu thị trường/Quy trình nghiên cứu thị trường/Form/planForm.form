@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Địa điểm",
+      "type": "textfield",
+      "id": "Field_1ftbo1k",
+      "key": "locationField",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Mục tiêu nghiên cứu",
+      "type": "textfield",
+      "id": "Field_0fl289n",
+      "key": "goalField",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Nội dung kế hoạch và tiến độ thực hiện",
+      "type": "textfield",
+      "id": "Field_1udetcd",
+      "key": "planField",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Chi phí ước tính",
+      "type": "number",
+      "id": "Field_10p4bzv",
+      "key": "priceField",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Ghi chú",
+      "type": "textfield",
+      "id": "Field_0fqomcq",
+      "key": "moreField"
+    }
+  ],
+  "type": "default",
+  "id": "planForm"
+}

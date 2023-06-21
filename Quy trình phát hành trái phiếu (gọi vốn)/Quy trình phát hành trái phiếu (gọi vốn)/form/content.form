@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Information Disclosure Content",
+      "type": "textfield",
+      "id": "Field_15v45nq",
+      "key": "field_0tzsct3",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_0uln2fp"
+}

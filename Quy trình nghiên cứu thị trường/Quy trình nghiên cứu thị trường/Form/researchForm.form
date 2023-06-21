@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Nghiên cứu đánh giá khả năng phát triển dự án mới",
+      "type": "textfield",
+      "id": "Field_01re6yh",
+      "key": "researchField",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Các công việc hỗ trợ",
+      "type": "textfield",
+      "id": "Field_1xxohfv",
+      "key": "jobField",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "researchForm"
+}

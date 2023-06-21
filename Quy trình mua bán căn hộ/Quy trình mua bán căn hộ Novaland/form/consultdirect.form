@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Tên căn hộ",
+      "type": "textfield",
+      "id": "Field_1ttrxe1",
+      "key": "field_01yntll",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Mã căn hộ",
+      "type": "textfield",
+      "id": "Field_1rwywt1",
+      "key": "field_11wr7u3",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Giá căn hộ",
+      "type": "textfield",
+      "id": "Field_1x2m4uu",
+      "key": "field_088fach",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Có",
+          "value": "yes"
+        },
+        {
+          "label": "Không",
+          "value": "no"
+        }
+      ],
+      "label": "Khách hàng có đồng ý đặt cọc không ?",
+      "type": "radio",
+      "id": "Field_1hdz3d7",
+      "key": "consultdirect",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_08hflgt"
+}

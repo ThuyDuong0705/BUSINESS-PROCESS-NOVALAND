@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "text": "<h1>Thông tin căn hộ</h1>",
+      "type": "text",
+      "id": "Field_07z80wz"
+    },
+    {
+      "label": "Kind of Aparment",
+      "type": "textfield",
+      "id": "Field_01cobg3",
+      "key": "title"
+    },
+    {
+      "label": "What is address of aparment?",
+      "type": "textfield",
+      "id": "Field_0rpf3wg",
+      "key": "address",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "How much is the monthly rent of the apartment?",
+      "type": "number",
+      "id": "Field_0xhcqty",
+      "key": "price",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "How big is the aparment?",
+      "type": "textfield",
+      "id": "Field_0wwy9gx",
+      "key": "area"
+    },
+    {
+      "label": "How many bedrooms in the apartment?",
+      "type": "textfield",
+      "id": "Field_1nbj836",
+      "key": "bedroom"
+    },
+    {
+      "label": "How many bathrooms in the apartment?",
+      "type": "textfield",
+      "id": "Field_0viecck",
+      "key": "bathroom"
+    },
+    {
+      "values": [
+        {
+          "label": "Agree",
+          "value": "agree"
+        },
+        {
+          "label": "Not Agree",
+          "value": "notagree"
+        }
+      ],
+      "label": "Is the customer agree?",
+      "type": "radio",
+      "id": "Field_0du42g9",
+      "key": "agree",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_07485z4"
+}

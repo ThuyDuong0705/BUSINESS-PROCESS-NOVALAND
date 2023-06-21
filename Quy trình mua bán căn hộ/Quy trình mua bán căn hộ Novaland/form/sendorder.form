@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Tên tài khoản",
+      "type": "textfield",
+      "id": "Field_1d7piqy",
+      "key": "field_1kcqzd5",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Số tài khoản",
+      "type": "textfield",
+      "id": "Field_08pjod5",
+      "key": "field_1ccoey6",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Tại ngân hàng:",
+      "type": "textfield",
+      "id": "Field_1px1gbv",
+      "key": "field_02a7j3g",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Số tiền đã chuyển",
+      "type": "textfield",
+      "id": "Field_0jg46pm",
+      "key": "field_01p8463",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Nội dung:",
+      "type": "textfield",
+      "id": "Field_1a267vt",
+      "key": "field_1q0j6ez",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_1dtvrvb"
+}
